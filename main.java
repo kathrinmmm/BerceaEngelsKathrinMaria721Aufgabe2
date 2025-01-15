@@ -161,19 +161,19 @@ public class Main {
         Medikament produkt3=new Produkt(3,"Bicicleta",400,"vara");
 
 
-        // Creăm o listă de produse
-        ArrayList<Produkt> productList = new ArrayList<>();
-        ArrayList<Produkt> productList1 = new ArrayList<>();
-        ArrayList<Produkt> productList2= new ArrayList<>();
 
-        //Adaugam la lista
+        ArrayList<Medikament> productList = new ArrayList<>();
+        ArrayList<Medikament> productList1 = new ArrayList<>();
+        ArrayList<Medikament> productList2= new ArrayList<>();
+
+
         productList.add(produkt1);
         productList.add(produkt2);
         productList1.add(produkt3);
 
-        kundenRepo.create(new Kunde(1,"Maria","Sebes",productList));
-        kundenRepo.create(new Kunde(2,"Denisa","Alba Iulia",productList1));
-        kundenRepo.create(new Kunde(3,"Luciana","Bucuresti",productList2));
+        kundenRepo.create(new Patient(1,"Maria","Sebes",productList));
+        kundenRepo.create(new Patient(2,"Denisa","Alba Iulia",productList1));
+        kundenRepo.create(new Patient(3,"Luciana","Bucuresti",productList2));
         return kundenRepo;
     }
     /**
@@ -181,8 +181,8 @@ public class Main {
      *
      * @return The in-file repository for products.
      */
-    private static Repository<Produkt> createInFileProduktRepository() {
-        Repository<Produkt> produktRepo = new FileRepository<>("produkt.db");
+    private static Repository<Medikament> createInFileProduktRepository() {
+        Repository<Medikament> produktRepo = new FileRepository<>("produkt.db");
         produktRepo.create(new Produkt(1,"Schiuri",200,"iarna"));
         produktRepo.create(new Produkt(2,"Clapari",300,"iarna"));
         produktRepo.create(new Produkt(3,"Bicicleta",400,"vara"));
